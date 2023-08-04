@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <div style="text-align: center; max-width: 500px; margin: 4rem auto;">
+
+        <div>
+            <h4>SignUp</h4>
+        </div>
+
+        <form action="{% url 'accountapp:create' %}" method="post">
+
+            {% csrf_token %}
+
+
+            <input type="submit">
+
+        </form>
+
+    </div>
+</body>
+</html>
