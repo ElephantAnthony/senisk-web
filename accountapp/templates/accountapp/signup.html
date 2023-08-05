@@ -12,6 +12,7 @@
     <title>시니스크2</title>
 </head>
 <body>
+    {% load bootstrap4 %}
     <div id = "p-1.5">
         <header>
             <nav class="flex items-center justify-between">
@@ -23,8 +24,11 @@
     </div>
 
     <main class = "flex items-center justify-between">
-        <form action="{% url 'accountapp:create' %}" method = "post" class = "loginFrm" >
-                        {% csrf_token %}
+        <form action="{% url 'accountapp:signup' %}" method = "post" class = "loginFrm" >
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <input type="submit">
+
             <fieldset style = "width : 150">
                 <legend class = "font-bold">
                     SignUp

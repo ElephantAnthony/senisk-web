@@ -5,17 +5,26 @@
     <title>Title</title>
 </head>
 <body>
+    {% load bootstrap4 %}
+
     <div style="text-align: center; max-width: 500px; margin: 4rem auto">
 
         <div>
-            <h4>Login</h4>
+            <h4>로그인</h4>
         </div>
 
         <div>
             <form action="" method="post">
                 {% csrf_token %}
+                {% bootstrap_form form %}
                 <input type="submit" class="btn btn-dark rounded-pill col-6 mt-3">
             </form>
+        </div>
+
+        <div>
+        <a href="{% url 'accountapp:signup' %}?next={{ request.path }}">
+            <span>회원 가입</span>
+        </a>
         </div>
 
     </div>

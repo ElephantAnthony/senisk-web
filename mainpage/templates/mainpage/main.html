@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+    고령층을 위한 키오스크 제작 플랫폼 [시니스크]
+    </div>
+
+    {% if not user.is_authenticated %}
+    <div>
+        <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
+            <span>login</span>
+        </a>
+    </div>
+    {% else %}
+    <div>
+        <a href="{% url 'accountapp:logout' %}">
+            <span>로그아웃</span>
+        </a>
+    </div>
+    {% endif %}
+
+    <div>
+        만들기 시작
+    </div>
+</body>
+</html>
