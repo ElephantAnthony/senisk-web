@@ -1,25 +1,63 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{% static 'css/reset.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/style_ui.css' %}" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>시니스크3</title>
 </head>
 <body>
-    <div>
-    키오스크에 적용할 UI 템플릿을 선택해주세요.
+    <div id = "wrapper">
+        <header>
+            <nav class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a class="text-3xl font-bold pr-3 primary" href="#">고령층을 위한<br>키오스크 제작 플랫폼</a>
+                </div>
+            </nav>
+        </header>
     </div>
-    <div>
-        <span>일반 키오스크</span>
-        <br>
-        <span>고령층 친화 키오스크</span>
-        <br>
-        <span>일반 / 고령층 친화 선택</span>
-        <br>
-        <span>고령층 친화 max 키오스크</span>
-    </div>
+    <main>
 
-    <div>
-        <a href="{% url 'kioskapp:information' %}">next</a>
-    </div>
+    </main>
+        <div class = "flex items-center justify-evenly align-center ">
+            <a class = "btn flex align-center" href = "#}"> prev </a>
+            <a class = "text-2xl pr-3">키오스크에 적용할 UI 템플릿을 선택해주세요.</a>
+            <a class = "btn flex align-center" href = "{% url 'kioskapp:information' %}"> next </a>
+        </div>
+        <div class = "flex items-center justify-evenly my-5">
+            <ul>
+                <a class = "flex justify-center" href = "#">
+                    <img src = "{% static 'img/template.png' %}">
+                    <a class = "btn-big" href = "#">일반 키오스크</a>
+                </a>
+
+            </ul>
+            <ul>
+                <a class = "flex justify-center" href = "#">
+                    <img src = "{% static 'img/template.png' %}">
+                    <a class = "btn-big" href = "#">고령층 진화</a>
+                </a>
+
+            </ul>
+            <ul>
+                <a class = "flex justify-center" href = "#">
+                    <img src = "{% static 'img/template.png' %}">
+                    <a class = "btn-big" href = "#">일반 / 고령층 선택</a>
+                </a>
+
+            </ul>
+            <ul>
+                <a class = "flex justify-center" href = "#">
+                    <img src = "{% static 'img/template.png' %}">
+                    <a class = "btn-big" href = "#">고령층 친화 MAX</a>
+                </a>
+            </ul>
+        </div>
+
+    </main>
 </body>
 </html>
