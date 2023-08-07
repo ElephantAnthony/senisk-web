@@ -1,17 +1,8 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href= "{% static 'css/reset.css' %}"/>
-    <link rel="stylesheet" href="{% static 'css/style_ui.css' %}" />
+{% block content %}
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>시니스크3</title>
-</head>
-<body>
     <div id = "wrapper">
         <header>
             <nav class="flex items-center justify-between">
@@ -57,5 +48,5 @@
             </ul>
         </div>
     </main>
-</body>
-</html>
+
+{% endblock %}

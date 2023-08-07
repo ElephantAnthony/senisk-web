@@ -1,45 +1,9 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{% block content %}
 
-    <!-- custom css -->
-    <link rel="stylesheet" href= "{% static 'css/reset.css' %}"/>
-    <link rel="stylesheet" href="{% static 'css/style_main.css' %}" />
-
-    <!-- tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>시니스크</title>
-  </head>
-<body>
-    <header>
-        <nav class="flex items-center justify-evenly">
-            <div class="flex items-center" >
-              <a class="text-3xl font-bold pr-3 primary" href="#">시니스크</a>
-            </div>
-            <div>
-              <span class="">고령층을 위한 키오스크 제작 플랫폼</span>
-            </div>
-                {% if not user.is_authenticated %}
-            <div>
-                <a class ="btn my-5" href="{% url 'accountapp:login' %}?next={{ request.path }}">
-                    <span>login</span>
-                </a>
-            </div>
-                {% else %}
-                <a href="{% url 'accountapp:logout' %}?next={{ request.path }}" class = "btn my-5">
-                    로그아웃
-                </a>
-                {% endif %}
-            </div>
-        </nav>
-
-    </header>
-
-    <section id = "main" class = "container">
+    <main id = "main" class = "container">
         <section class = "video">
             <div class = "video_img">
                 <a class = "flex justify-center" href = "">
@@ -66,7 +30,6 @@
             </div>
             {% endif %}
         </section>
+    </main>
 
-    </section>
-</body>
-</html>
+{% endblock %}

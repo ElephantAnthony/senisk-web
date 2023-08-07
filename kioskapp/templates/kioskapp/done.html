@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
   <div>
     키오스크가 완성되었습니다! 마이페이지로 이동하여 파일을 확인해주시길 바랍니다.
   </div>
@@ -13,5 +11,4 @@
         마이 페이지
     </div>
 
-</body>
-</html>
+{% endblock %}
