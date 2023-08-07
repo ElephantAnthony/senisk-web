@@ -21,5 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('account/', include('accountapp.urls')),
     path('kiosk/', include('kioskapp.urls')),
-    path('', include('mainpage.urls')),
+    path('', include('introapp.urls')),
 ]

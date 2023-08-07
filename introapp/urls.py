@@ -1,8 +1,8 @@
 from django.urls import path
 
-from mainpage.views import landing
+from introapp.views import landing
 
-app_name = "mainpage"
+app_name = "introapp"
 
 urlpatterns = [
 
