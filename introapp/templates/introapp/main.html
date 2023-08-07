@@ -1,38 +1,72 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href= "{% static 'css/reset.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/style_main.css' %}" />
+
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>시니스크</title>
+  </head>
 <body>
-    <div>
-    고령층을 위한 키오스크 제작 플랫폼 [시니스크]
-    </div>
+    <header>
+        <nav class="flex items-center justify-evenly">
+            <div class="flex items-center" >
+              <a class="text-3xl font-bold pr-3 primary" href="#">시니스크</a>
+            </div>
+            <div>
+              <span class="">고령층을 위한 키오스크 제작 플랫폼</span>
+            </div>
+                {% if not user.is_authenticated %}
+            <div>
+                <a class ="btn my-5" href="{% url 'accountapp:login' %}?next={{ request.path }}">
+                    <span>login</span>
+                </a>
+            </div>
+                {% else %}
+                <a href="{% url 'accountapp:logout' %}?next={{ request.path }}" class = "btn my-5">
+                    로그아웃
+                </a>
+                {% endif %}
+            </div>
+        </nav>
 
-    {% if not user.is_authenticated %}
-    <div>
-        <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
-            <span>login</span>
-        </a>
-    </div>
+    </header>
 
-    <div>
-        <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
-            <span>만들기 시작</span>
-        </a>
-    </div>
-    {% else %}
-    <div>
-        <a href="{% url 'accountapp:logout' %}">
-            <span>로그아웃</span>
-        </a>
-    </div>
+    <section id = "main" class = "container">
+        <section class = "video">
+            <div class = "video_img">
+                <a class = "flex justify-center" href = "">
+                    <img src="{% static 'img/thumbnail.png' %}" alt="사용 예시 비디오" />
+                </a>
+            </div>
 
-    <div>
-        <a href="{% url 'kioskapp:ui' pk=user.pk %}">
-            <span>만들기 시작</span>
-        </a>
-    </div>
-    {% endif %}
+        {% if not user.is_authenticated %}
+            <div>
+                <div>
+                  <a class ="btn-big my-5" href="{% url 'accountapp:login' %}">
+                      만들기 시작
+                  </a>
+                </div>
+            </div>
+            {% else %}
+            <div>
+
+                <div>
+                   <a class ="btn-big my-5" href="{% url 'kioskapp:select_ui' %}">
+                       만들기 시작
+                   </a>
+                </div>
+            </div>
+            {% endif %}
+        </section>
+
+    </section>
 </body>
 </html>
