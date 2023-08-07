@@ -1,0 +1,58 @@
+:root {
+    --dark: #333333;
+    --light: #fdfdfd;
+    --medium: #aaaaaa;
+    --primary: #83b068;
+    --secondary: #68a9b0;
+    --warning: #edc447;
+    --danger: #ed5d47;
+    --border: #cccccc;
+}
+
+.primary {
+    color: #83b068;
+}
+
+html {
+    color: var(--dark);
+}
+
+nav {
+    box-shadow: 1px 1px 5px #cccccc;
+    padding: 1rem;
+    margin-bottom : 50px;
+}
+
+.btn {
+    display: flex;
+    border-radius: 0.2rem;
+    padding: 1rem 2rem;
+    background-color: var(--secondary);
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 1px 1px 5px #cccccc;
+}
+
+.btn:hover {
+    background-color: #fdfdfd;
+    color: var(--secondary);
+    transition: 1s;
+}
+
+.categoryFrm {
+    border : 1px solid var(--primary);
+    padding: 1rem 2rem;
+    margin: 1rem;
+    background-color : var(--primary);
+    display : flex;
+    flex-basis : content;
+    justify-content : center;
+}
+
+
+.categoryFrm fieldset ul li {
+    border:1px solid #ccc; background: #fff;
+    margin-bottom: 10px;
+    margin-top : 10px;
+}
