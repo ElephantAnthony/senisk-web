@@ -1,19 +1,58 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{% static 'css/reset.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/style_store.css' %}" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>시니스크4</title>
 </head>
 <body>
-    <div>업장 정보를 입력해주세요.</div>
 
-    <div>
-        <a href="{% url 'kioskapp:ui' %}">prev</a>
+    <div id = "wrapper">
+            <header>
+                <nav class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <a class="text-3xl font-bold pr-3 primary" href="#">고령층을 위한<br>키오스크 제작 플랫폼</a>
+                    </div>
+                </nav>
+            </header>
     </div>
 
-    <div>
-        <a href="{% url 'kioskapp:color' %}">next</a>
+    <div class = "flex items-center justify-evenly align-center ">
+            <a class = "btn flex align-center" href = "{% url 'kioskapp:ui' %}"> prev </a>
+            <a class = "text-2xl pr-3">업장 정보를 입력해주세요.</a>
+            <a class = "btn flex align-center" href = "{% url 'kioskapp:color' %}"> next </a>
     </div>
+
+    <main>
+
+        <form action = "#" method = "post" class = "categoryFrm">
+                <fieldset style = "width : 150">
+                    <legend class = "font-bold">Category</legend>
+                    <ul>
+                        <li>
+                            <h5>업장의 종류를 선택해주세요.</h5>
+
+                            <select name = "store">
+                                <option value = 'cafe'>카페</option>
+                                <option value = 'food'>음식점</option>
+                            </select>
+                        </li>
+                        <li>
+                            <h5>업장 이름을 입력해주세요.</h5>
+                            <span><input type = "text" name = "store" placeholder = "내용을 입력해주세요"> </span>
+                        </li>
+                    </ul>
+                </fieldset>
+
+            </form>
+    </main>
+
 
 </body>
 </html>
