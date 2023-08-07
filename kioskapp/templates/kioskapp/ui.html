@@ -9,13 +9,10 @@
     키오스크에 적용할 UI 템플릿을 선택해주세요.
     </div>
     <div>
-        <span>일반 키오스크</span>
-        <br>
-        <span>고령층 친화 키오스크</span>
-        <br>
-        <span>일반 / 고령층 친화 선택</span>
-        <br>
-        <span>고령층 친화 max 키오스크</span>
+        <a href="{% url 'choose_ui' selected_number=0 %}">일반 키오스크</a>
+        <a href="{% url 'choose_ui' selected_number=1 %}">고령층 친화 키오스크</a>
+        <a href="{% url 'choose_ui' selected_number=2 %}">일반 / 고령층 친화 선택 </a>
+        <a href="{% url 'choose_ui' selected_number=3 %}">고령층 친화 max 키오스크</a>
     </div>
 
     <div>

@@ -74,7 +74,7 @@ ROOT_URLCONF = 'senisk.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -142,5 +142,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = reverse_lazy('mainpage:main')
+LOGIN_REDIRECT_URL = reverse_lazy('introapp:main')
 LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')

@@ -1,6 +1,10 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render
 
 # Create your views here.
+from django.views.generic import TemplateView
 
-def landing(request):
-    return render(request, 'introapp/main.html')
+
+class IntroTemplateView(TemplateView):
+    model = User
+    template_name = 'introapp/main.html'

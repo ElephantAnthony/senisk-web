@@ -15,18 +15,24 @@
             <span>login</span>
         </a>
     </div>
+
+    <div>
+        <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
+            <span>만들기 시작</span>
+        </a>
+    </div>
     {% else %}
     <div>
         <a href="{% url 'accountapp:logout' %}">
             <span>로그아웃</span>
         </a>
     </div>
-    {% endif %}
 
     <div>
-        <a href="{% url 'kioskapp:ui' %}">
+        <a href="{% url 'kioskapp:ui' pk=user.pk %}">
             <span>만들기 시작</span>
         </a>
     </div>
+    {% endif %}
 </body>
 </html>

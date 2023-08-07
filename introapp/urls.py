@@ -1,11 +1,11 @@
 from django.urls import path
 
-from introapp.views import landing
+from introapp.views import IntroTemplateView
 
 app_name = "introapp"
 
 urlpatterns = [
 
-    path('', landing, name='main'),
+    path('', IntroTemplateView.as_view(), name='main'),
 
 ]
