@@ -1,45 +1,48 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'base.html' %} {% load static %} {% block content %}
+<main class="container">
+  <div class="flex items-center justify-evenly align-center">
+    <a class="btn flex align-center" href="#"> prev </a>
+    <a class="text-2xl pr-3">키오스크에 적용할 UI 템플릿을 선택해주세요.</a>
+    <a class="btn flex align-center" href="{% url 'kioskapp:information' %}">
+      next
+    </a>
+  </div>
 
-{% block content %}
-    <main>
+  <div class="flex items-center justify-evenly my-5">
+    <ul>
+      <a class="flex justify-center" href="{% url 'kioskapp:save_ui' ui=1 %}">
+        <img src="{% static 'img/template.png' %}" />
+        <a class="btn" href="{% url 'kioskapp:save_ui' ui=1 %}"
+          >일반 키오스크</a
+        >
+      </a>
+    </ul>
 
-        <div class = "flex items-center justify-evenly align-center ">
-            <a class = "btn flex align-center" href = "#"> prev </a>
-            <a class = "text-2xl pr-3">키오스크에 적용할 UI 템플릿을 선택해주세요.</a>
-            <a class = "btn flex align-center" href = "{% url 'kioskapp:information' %}"> next </a>
-        </div>
+    <ul>
+      <a class="flex justify-center" href="{% url 'kioskapp:save_ui' ui=2 %}">
+        <img src="{% static 'img/template.png' %}" />
+        <a class="btn" href="{% url 'kioskapp:save_ui' ui=2 %}">고령층 진화</a>
+      </a>
+    </ul>
 
-        <div class = "flex items-center justify-evenly my-5">
-            <ul>
-                <a class = "flex justify-center" href = "{% url 'kioskapp:save_ui' ui=1 %}">
-                    <img src = "{% static 'img/template.png' %}">
-                    <a class = "btn-big" href = "{% url 'kioskapp:save_ui' ui=1 %}">일반 키오스크</a>
-                </a>
-            </ul>
+    <ul>
+      <a class="flex justify-center" href="{% url 'kioskapp:save_ui' ui=3 %}">
+        <img src="{% static 'img/template.png' %}" />
+        <a class="btn" href="{% url 'kioskapp:save_ui' ui=3 %}"
+          >일반 / 고령층 선택</a
+        >
+      </a>
+    </ul>
 
-            <ul>
-                <a class = "flex justify-center" href = "{% url 'kioskapp:save_ui' ui=2 %}">
-                    <img src = "{% static 'img/template.png' %}">
-                    <a class = "btn-big" href = "{% url 'kioskapp:save_ui' ui=2 %}">고령층 진화</a>
-                </a>
-            </ul>
-
-            <ul>
-                <a class = "flex justify-center" href = "{% url 'kioskapp:save_ui' ui=3 %}">
-                    <img src = "{% static 'img/template.png' %}">
-                    <a class = "btn-big" href = "{% url 'kioskapp:save_ui' ui=3 %}">일반 / 고령층 선택</a>
-                </a>
-
-            </ul>
-            
-            <ul>
-                <a class = "flex justify-center" href = "{% url 'kioskapp:save_ui' ui=4 %}">
-                    <img src = "{% static 'img/template.png' %}">
-                    <a class = "btn-big" href = "{% url 'kioskapp:save_ui' ui=4 %}">고령층 친화 MAX</a>
-                </a>
-            </ul>
-        </div>
-    </main>
+    <ul>
+      <a class="flex justify-center" href="{% url 'kioskapp:save_ui' ui=4 %}">
+        <img src="{% static 'img/template.png' %}" />
+        <a class="btn" href="{% url 'kioskapp:save_ui' ui=4 %}"
+          >고령층 친화 MAX</a
+        >
+      </a>
+    </ul>
+  </div>
+</main>
 
 {% endblock %}
