@@ -1,28 +1,7 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href= "{% static 'css/reset.css' %}"/>
-    <link rel="stylesheet" href="{% static 'css/style_store.css' %}" />
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>시니스크4</title>
-</head>
-<body>
-
-    <div id = "wrapper">
-            <header>
-                <nav class="flex items-center justify-between">
-                    <div class="flex items-center">
-                        <a class="text-3xl font-bold pr-3 primary" href="#">고령층을 위한<br>키오스크 제작 플랫폼</a>
-                    </div>
-                </nav>
-            </header>
-    </div>
-
+{% block content %}
     <div class = "flex items-center justify-evenly align-center ">
             <a class = "btn flex align-center" href = "{% url 'kioskapp:select_ui' %}"> prev </a>
             <a class = "text-2xl pr-3">업장 정보를 입력해주세요.</a>
@@ -53,6 +32,4 @@
             </form>
     </main>
 
-
-</body>
-</html>
+{% endblock %}

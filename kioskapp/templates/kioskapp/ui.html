@@ -1,61 +1,48 @@
-{% load static %}
+{% extends 'base.html' %} {% load static %} {% block content %}
+<main class="container">
+  <div class="flex items-center justify-evenly align-center">
+    <a class="btn flex align-center" href="#"> prev </a>
+    <a class="text-2xl pr-3">키오스크에 적용할 UI 템플릿을 선택해주세요.</a>
+    <a class="btn flex align-center" href="{% url 'kioskapp:information' %}">
+      next
+    </a>
+  </div>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href= "{% static 'css/reset.css' %}"/>
-    <link rel="stylesheet" href="{% static 'css/style_ui.css' %}" />
+  <div class="flex items-center justify-evenly my-5">
+    <ul>
+      <a class="flex justify-center" href="{% url 'kioskapp:save_ui' ui=1 %}">
+        <img src="{% static 'img/template.png' %}" />
+        <a class="btn" href="{% url 'kioskapp:save_ui' ui=1 %}"
+          >일반 키오스크</a
+        >
+      </a>
+    </ul>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>시니스크3</title>
-</head>
-<body>
-    <div id = "wrapper">
-        <header>
-            <nav class="flex items-center justify-between">
-                <div class="flex items-center">
-                    <a class="text-3xl font-bold pr-3 primary" href="#">고령층을 위한<br>키오스크 제작 플랫폼</a>
-                </div>
-            </nav>
-        </header>
-    </div>
-    <main>
+    <ul>
+      <a class="flex justify-center" href="{% url 'kioskapp:save_ui' ui=2 %}">
+        <img src="{% static 'img/template.png' %}" />
+        <a class="btn" href="{% url 'kioskapp:save_ui' ui=2 %}">고령층 진화</a>
+      </a>
+    </ul>
 
-        <div class = "flex items-center justify-evenly align-center ">
-            <a class = "btn flex align-center" href = "#"> prev </a>
-            <a class = "text-2xl pr-3">키오스크에 적용할 UI 템플릿을 선택해주세요.</a>
-            <a class = "btn flex align-center" href = "{% url 'kioskapp:information' %}"> next </a>
-        </div>
-        <div class = "flex items-center justify-evenly my-5">
-            <ul>
-                <a class = "flex justify-center" href = "{% url 'kioskapp:save_ui' ui=1 %}">
-                    <img src = "{% static 'img/template.png' %}">
-                    <a class = "btn-big" href = "{% url 'kioskapp:save_ui' ui=1 %}">일반 키오스크</a>
-                </a>
-            </ul>
-            <ul>
-                <a class = "flex justify-center" href = "{% url 'kioskapp:save_ui' ui=2 %}">
-                    <img src = "{% static 'img/template.png' %}">
-                    <a class = "btn-big" href = "{% url 'kioskapp:save_ui' ui=2 %}">고령층 진화</a>
-                </a>
+    <ul>
+      <a class="flex justify-center" href="{% url 'kioskapp:save_ui' ui=3 %}">
+        <img src="{% static 'img/template.png' %}" />
+        <a class="btn" href="{% url 'kioskapp:save_ui' ui=3 %}"
+          >일반 / 고령층 선택</a
+        >
+      </a>
+    </ul>
 
-            </ul>
-            <ul>
-                <a class = "flex justify-center" href = "{% url 'kioskapp:save_ui' ui=3 %}">
-                    <img src = "{% static 'img/template.png' %}">
-                    <a class = "btn-big" href = "{% url 'kioskapp:save_ui' ui=3 %}">일반 / 고령층 선택</a>
-                </a>
+    <ul>
+      <a class="flex justify-center" href="{% url 'kioskapp:save_ui' ui=4 %}">
+        <img src="{% static 'img/template.png' %}" />
+        <a class="btn" href="{% url 'kioskapp:save_ui' ui=4 %}"
+          >고령층 친화 MAX</a
+        >
+      </a>
+    </ul>
+  </div>
+</main>
 
-            </ul>
-            <ul>
-                <a class = "flex justify-center" href = "{% url 'kioskapp:save_ui' ui=4 %}">
-                    <img src = "{% static 'img/template.png' %}">
-                    <a class = "btn-big" href = "{% url 'kioskapp:save_ui' ui=4 %}">고령층 친화 MAX</a>
-                </a>
-            </ul>
-        </div>
-    </main>
-</body>
-</html>
+{% endblock %}

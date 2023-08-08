@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    {% load bootstrap4 %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% load bootstrap4 %}
 
     <div style="text-align: center; max-width: 500px; margin: 4rem auto">
 
@@ -28,5 +26,5 @@
         </div>
 
     </div>
-</body>
-</html>
+
+{% endblock %}
